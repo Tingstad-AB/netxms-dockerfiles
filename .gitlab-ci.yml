@@ -1,0 +1,20 @@
+stages:
+  - image_build
+
+include:
+  - local: .gitlab/templates/dkr_image_build.yml
+
+nxagent:
+  extends: .image_build
+  variables:
+    DOCKERFILE_PATH: nxagent
+
+server:
+  extends: .image_build
+  variables:
+    DOCKERFILE_PATH: server
+
+webui:
+  extends: .image_build
+  variables:
+    DOCKERFILE_PATH: webui
