@@ -17,4 +17,4 @@
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
     - docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" $DOCKERFILE_PATH
-    - docker push "$CI_REGISTRY_IMAGE$DOCKERFILE_PATH{tag}"
+    - docker push "$CI_REGISTRY_IMAGE/${DOCKERFILE_PATH}{tag}"
