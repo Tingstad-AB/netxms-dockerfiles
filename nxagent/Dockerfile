@@ -3,7 +3,7 @@
 FROM debian:buster
 MAINTAINER Matt Beckett <matt@beckett.cloud>
 
-ENV NETXMS_VERSION_AGENT=3.8.267-1
+ENV NETXMS_VERSION_AGENT=3.8.314-1
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     apt-get update && apt-get -y install curl apt-transport-https gnupg && \
     curl -sL http://packages.netxms.org/netxms.gpg | apt-key add - && \
