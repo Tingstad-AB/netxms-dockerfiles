@@ -1,6 +1,6 @@
 # Dockerfile for building NetXMS webui
 
-FROM tomcat:10.0.5-jdk15-openjdk-buster
+FROM tomcat:10.0.6-jdk16-openjdk-slim-buster
 MAINTAINER Matt Beckett <matt@beckett.cloud>
 
 ENV VERSION=3.8.314-1 NETXMS_SERVER=127.0.0.1 NETXMS_SESSIONTIMEOUT=120 NETXMS_ENABLEADVANCEDSETTINGS=true
