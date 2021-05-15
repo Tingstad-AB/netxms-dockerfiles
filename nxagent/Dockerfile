@@ -1,6 +1,6 @@
 # Dockerfile for building NetXMS server image
 
-FROM debian:buster
+FROM debian:buster-slim
 MAINTAINER Matt Beckett <matt@beckett.cloud>
 
 ENV NETXMS_VERSION_AGENT=3.8.314-1
