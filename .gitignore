@@ -1,0 +1,5 @@
+*venv*
+*.vscode*
+
+# CI Script outputs
+*container_registry_tags.json*
