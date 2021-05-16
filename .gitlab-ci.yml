@@ -18,3 +18,8 @@ webui:
   extends: .image_build
   variables:
     DOCKERFILE_PATH: webui
+
+webuirest:
+  extends: .image_build
+  variables:
+    DOCKERFILE_PATH: webuirest
