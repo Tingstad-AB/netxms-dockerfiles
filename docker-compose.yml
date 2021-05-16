@@ -2,27 +2,28 @@ version: '2'
 
 services:
   server:
-    image: lomo/netxms-server
+    image: registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:3-8-314
     ports:
     - "4700:4700"
     - "4701:4701"
 
   webui:
-    image: lomo/netxms-webui
+    image: registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webui:3-8-314
     ports:
     - "8080:8080"
     environment:
     - "NETXMS_SERVER=server"
 
-  console:
-    build: lomo/netxms-nxmc
-    environment:
-    - "DISPLAY=$DISPLAY"
-    volumes:
-    - "/tmp/.X11-unix:/tmp/.X11-unix"
+  # webuirest:
+  #   image: registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webuirest:3-8-314
+  #   ports:
+  #   - "8080:8080"
+  #   environment:
+  #   - "NETXMS_SERVER=server"
+  #   - "NETXMS_PORT=4701"
 
   agent:
-    image: lomo/netxms-nxagent
+    image: registry.gitlab.com/matthew-beckett/netxms-dockerfiles/nxagent:3-8-314
     environment:
     - "NXAGENT_CONFIG=MasterServer=server\nLogFile=/var/log/nxagentsome.log\nEnableProxy=yes\nEnableSNMPProxy=yes"
     - "NXAGENT_MASTERSERVERS=server"

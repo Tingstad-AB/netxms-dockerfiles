@@ -2,11 +2,12 @@
 
 Docker image of NetXMS Server (www.netxms.org). Currently limited to SQLlite database. Database files and log files are located in docker volume /data.
 
-Start with
+Run with:
+```bash
+docker run registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:3-8-314
+```
 
-	docker run lomo/netxms-server
-
-Environment variables
+Environment Variables
 
 NetXMS Server
 - **NETXMS\_UNLOCKONSTARTUP** - set to 1 to unlock database on each container startup (default), set to 0 to skip database unlocking
