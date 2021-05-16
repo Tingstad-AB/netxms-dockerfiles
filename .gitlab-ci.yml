@@ -3,7 +3,7 @@ stages:
   - dependent_image_build
 
 include:
-  - local: gitlab/templates/dkr_image_build.yml
+  - local: .gitlab/templates/dkr_image_build.yml
 
 nxagent:
   extends: .image_build
