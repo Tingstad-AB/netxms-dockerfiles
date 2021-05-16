@@ -17,7 +17,7 @@ updates:
     directory: "/nxagent" # Location of package manifests
     schedule:
       interval: "daily"
-  - package-ecosystem: "python" # See documentation for possible values
+  - package-ecosystem: "pip" # See documentation for possible values
     directory: "/.gitlab/scripts/collect_container_images" # Location of package manifests
     schedule:
       interval: "daily"
