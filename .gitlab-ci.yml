@@ -23,3 +23,5 @@ webuirest:
   extends: .image_build
   variables:
     DOCKERFILE_PATH: webuirest
+  needs:
+    - webui
