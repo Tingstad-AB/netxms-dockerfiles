@@ -10,7 +10,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     echo "deb http://packages.netxms.org/debian/ buster main" > /etc/apt/sources.list.d/netxms.list && \
     apt-get update && apt-get -y install netxms-agent="${MAJOR_VERSION}.${MINOR_VERSION}-1" && apt-get clean
 
-COPY ./docker-entrypoint.sh /
+COPY nxagent/docker-entrypoint.sh /
 
 RUN  chmod 755 /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
