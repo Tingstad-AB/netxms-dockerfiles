@@ -5,7 +5,7 @@ MAINTAINER Matt Beckett <matt@beckett.cloud>
 
 ENV MAJOR_VERSION=3.8 MINOR_VERSION=314 NETXMS_SERVER=127.0.0.1 NETXMS_SESSIONTIMEOUT=120 NETXMS_ENABLEADVANCEDSETTINGS=true
 
-COPY ./docker-entrypoint.sh /
+COPY webui/docker-entrypoint.sh /
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     apt-get update && apt-get -y install wget apt-transport-https && \
