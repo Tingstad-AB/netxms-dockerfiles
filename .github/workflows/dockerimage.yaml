@@ -30,10 +30,44 @@ jobs:
       name: Checkout repository
     
     - uses: mr-smithers-excellent/docker-build-push@v5
-      name: Build & push Web UI
+      name: Build & push Web UI with REST API
       with:
         image: netxms_webuirest
         registry: ghcr.io
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }} 
         dockerfile: webuirest/Dockerfile
+
+  Server:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout repository
+    
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push Server
+      with:
+        image: netxms_webuirest
+        registry: ghcr.io
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_TOKEN }} 
+        dockerfile: server/Dockerfile
+
+  NXAgent:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout repository
+    
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push NXAgent
+      with:
+        image: netxms_webuirest
+        registry: ghcr.io
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_TOKEN }} 
+        dockerfile: nxagent/Dockerfile
