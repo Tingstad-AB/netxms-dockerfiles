@@ -19,7 +19,7 @@ Docker image of NetXMS Server ([www.netxms.org](http://www.netxms.org/)). Curren
 Quickstart with
 
 ```
-docker run registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:latest
+docker run ghcr.io/matthew-beckett/netxms_server:latest
 ```
 
 # Environment variables
