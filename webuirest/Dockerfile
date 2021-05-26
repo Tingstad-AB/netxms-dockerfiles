@@ -1,9 +1,9 @@
 # Dockerfile for building NetXMS webui
 
-FROM registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webui:3-8-314
+FROM ghcr.io/matthew-beckett/netxms_webui:3.8.366
 MAINTAINER Matt Beckett <matt@beckett.cloud>
 
-ENV MAJOR_VERSION=3.8 MINOR_VERSION=314 NETXMS_SERVER=127.0.0.1 NETXMS_SESSIONTIMEOUT=120 NETXMS_ENABLEADVANCEDSETTINGS=true
+ENV MAJOR_VERSION=3.8 MINOR_VERSION=366 NETXMS_SERVER=127.0.0.1 NETXMS_SESSIONTIMEOUT=120 NETXMS_ENABLEADVANCEDSETTINGS=true
 
 COPY webuirest/docker-entrypoint.sh /
 
