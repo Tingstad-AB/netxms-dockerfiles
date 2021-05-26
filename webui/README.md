@@ -5,7 +5,7 @@ Docker image of NetXMS Web UI and REST API (www.netxms.org).
 
 Run with:
 ```bash
-docker run -ti -e NETXMS_SERVER=<NETXMS_SERVER_HOSTNAME> --rm registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webuirest:3-8-366
+docker run -ti -e NETXMS_SERVER=<NETXMS_SERVER_HOSTNAME> --rm registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webuirest:3-8-382
 ```
 
 Environment Variables

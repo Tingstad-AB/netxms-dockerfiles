@@ -4,7 +4,7 @@ Docker image of NetXMS Server (www.netxms.org). Currently limited to SQLlite dat
 
 Run with:
 ```bash
-docker run registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:3-8-366
+docker run registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:3-8-382
 ```
 
 Environment Variables
