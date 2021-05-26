@@ -4,7 +4,7 @@ Docker image of NetXMS agent.
 
 Run with:
 ```bash
-docker run NETXMS_REGISTERSERVER=<NETXMS_SERVER_HOSTNAME> --rm registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webuirest:3-8-314
+docker run NETXMS_REGISTERSERVER=<NETXMS_SERVER_HOSTNAME> --rm registry.gitlab.com/matthew-beckett/netxms-dockerfiles/webuirest:3-8-366
 ```
 
 Environment Variables
