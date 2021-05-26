@@ -24,6 +24,7 @@ jobs:
   WebUIREST:
 
     runs-on: ubuntu-latest
+    needs: WebUI
 
     steps:
     - uses: actions/checkout@v2
