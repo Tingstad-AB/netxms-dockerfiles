@@ -14,12 +14,12 @@ Victor Kirhenshtein and Alex Kirhenshtein are the original authors and current m
 
 # NetXMS Server Docker Image
 
-Docker image of NetXMS Server ([www.netxms.org](http://www.netxms.org/)). Currently limited to SQLlite database. Database files and log files are located in docker volume /data.
+Docker image of NetXMS Server ([www.netxms.org](http://www.netxms.org/)). Uses Microsoft ODBC Driver 17 for SQL Server. Log files are located in docker volume /data.
 
 Quickstart with
 
 ```
-docker run ghcr.io/matthew-beckett/netxms_server:latest
+docker run 
 ```
 
 # Environment variables
@@ -38,3 +38,9 @@ docker run ghcr.io/matthew-beckett/netxms_server:latest
 -   **NXAGENT_LOGLEVEL**  - log level
 -   **NXAGENT_PLATFORMSUFFIX**  - platform suffix
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
+
+## ODBC DSN
+
+- **ODBC_SQL_SERVER** - Network address to database server
+- **ODBC_DB_NAME** - Database name
+- **ODBC_DB_USER** - Database user Note: password is set by adding DBPassword=pass in **NETXMS_CONFIG**
