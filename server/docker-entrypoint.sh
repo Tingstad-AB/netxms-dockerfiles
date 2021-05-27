@@ -14,7 +14,7 @@ then
 fi
 
 # ODBC DSN
-echo "Generating ODBC config file ${odbc_ini}"
+echo "Generating ODBC config file"
 cat > /etc/odbc.ini <<EOL
 [NetXMS]
 Driver = ODBC Driver 17 for SQL Server
