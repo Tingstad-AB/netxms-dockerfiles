@@ -1,10 +1,10 @@
 # NetXMS Server docker image
 
-Docker image of NetXMS Server (www.netxms.org). Currently limited to SQLlite database. Database files and log files are located in docker volume /data.
+Docker image of NetXMS Server (www.netxms.org). Uses Microsoft ODBC Driver 17 for SQL Server. Log files are located in docker volume /data.
 
 Run with:
 ```bash
-docker run registry.gitlab.com/matthew-beckett/netxms-dockerfiles/server:3-8-382
+docker run 
 ```
 
 Environment Variables
@@ -20,3 +20,9 @@ NetXMS agent
 - **NXAGENT_CONFIGSERVER** - Config server hostname
 - **NXAGENT_LOGLEVEL** - log level
 - **NXAGENT_PLATFORMSUFFIX** - platform suffix
+
+ODBC DSN
+- **ODBC_SQL_SERVER** - Network address to database server
+- **ODBC_DB_NAME** - Database name
+- **ODBC_DB_USER** - Database user
+Note: password is set by adding DBPassword=pass in **NETXMS\_CONFIG**
