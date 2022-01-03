@@ -1,8 +1,8 @@
 # Dockerfile for building NetXMS server image
 
 FROM debian:buster-slim
-MAINTAINER Matt Beckett <matt@beckett.cloud>
-ENV MAJOR_VERSION=3.8 MINOR_VERSION=382
+LABEL org.opencontainers.image.authors="marcus.halmsjo@tingstad.se"
+ENV MAJOR_VERSION=3.9 MINOR_VERSION=420
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     apt-get update && apt-get -y install curl apt-transport-https gnupg && \
