@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.authors="marcus.halmsjo@tingstad.se"
 ENV MAJOR_VERSION=3.9 MINOR_VERSION=420
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
-    apt-get update && apt-get -y install curl apt-transport-https gnupg && \
+    apt-get update && apt-get -y install curl apt-transport-https gnupg tzdata && \
     curl -sL http://packages.netxms.org/netxms.gpg | apt-key add - && \
     echo "deb http://packages.netxms.org/debian/ buster main" > /etc/apt/sources.list.d/netxms.list && \
     apt-get update && apt-get -y install netxms-base="${MAJOR_VERSION}.${MINOR_VERSION}-1" netxms-server="${MAJOR_VERSION}.${MINOR_VERSION}-1" netxms-agent="${MAJOR_VERSION}.${MINOR_VERSION}-1" netxms-dbdrv-odbc="${MAJOR_VERSION}.${MINOR_VERSION}-1" supervisor && apt-get clean
@@ -21,7 +21,7 @@ VOLUME /data
 
 EXPOSE 4701
 
-ENV NETXMS_UNLOCKONSTARTUP=1 NETXMS_STARTAGENT=1 NXAGENT_REGISTERSERVER=127.0.0.1
+ENV NETXMS_UNLOCKONSTARTUP=1 NETXMS_STARTAGENT=1 NXAGENT_REGISTERSERVER=127.0.0.1 TZ="Europe/Stockholm"
 
 COPY ./docker-entrypoint.sh ./nxagent.sh /
 
