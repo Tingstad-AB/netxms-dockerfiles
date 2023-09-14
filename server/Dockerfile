@@ -2,7 +2,7 @@
 
 FROM debian:buster-slim
 LABEL org.opencontainers.image.authors="marcus.halmsjo@tingstad.se"
-ENV MAJOR_VERSION=4.2 MINOR_VERSION=2
+ENV MAJOR_VERSION=4.4 MINOR_VERSION=2
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     apt-get update && apt-get -y install curl apt-transport-https gnupg tzdata && \
