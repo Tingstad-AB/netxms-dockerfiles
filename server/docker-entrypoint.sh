@@ -25,6 +25,7 @@ Driver = ODBC Driver 18 for SQL Server
 Server = tcp:${ODBC_SQL_SERVER},1433
 Database = ${ODBC_DB_NAME}
 User = ${ODBC_DB_USER}
+TrustServerCertificate = yes
 EOL
 
 # Fix SMS kannel Drv
