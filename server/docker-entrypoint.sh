@@ -21,7 +21,7 @@ fi
 echo "Generating ODBC config file /etc/odbc.ini"
 cat > /etc/odbc.ini <<EOL
 [NetXMS]
-Driver = ODBC Driver 17 for SQL Server
+Driver = ODBC Driver 18 for SQL Server
 Server = tcp:${ODBC_SQL_SERVER},1433
 Database = ${ODBC_DB_NAME}
 User = ${ODBC_DB_USER}
