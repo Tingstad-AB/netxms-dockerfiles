@@ -6,7 +6,7 @@ ENV MAJOR_VERSION=4.4 MINOR_VERSION=2
 ENV SERVER_DEBUG_LEVEL=0
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
-    apt-get update && apt-get -y install curl wget apt-transport-https gnupg tzdata && \
+    apt-get update && apt-get -y install curl wget lsb-release apt-transport-https gnupg tzdata && \
     curl -sL http://packages.netxms.org/netxms.gpg | apt-key add - && \
 	wget https://packages.netxms.org/netxms-release-latest.deb && \
     dpkg -i netxms-release-latest.deb && \
