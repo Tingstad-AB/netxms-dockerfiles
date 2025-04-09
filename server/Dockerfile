@@ -2,7 +2,7 @@
 
 FROM debian:buster-slim
 LABEL org.opencontainers.image.authors="marcus.halmsjo@tingstad.se"
-ENV MAJOR_VERSION=5.0 MINOR_VERSION=6
+ENV MAJOR_VERSION=5.2 MINOR_VERSION=1
 ENV SERVER_DEBUG_LEVEL=0
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
