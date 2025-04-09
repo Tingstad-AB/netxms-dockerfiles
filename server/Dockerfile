@@ -1,6 +1,6 @@
 # Dockerfile for building NetXMS server image
 
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 LABEL org.opencontainers.image.authors="marcus.halmsjo@tingstad.se"
 ENV MAJOR_VERSION=5.2 MINOR_VERSION=1
 ENV SERVER_DEBUG_LEVEL=0
@@ -10,7 +10,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     curl -sL http://packages.netxms.org/netxms.gpg | apt-key add - && \
 	wget https://packages.netxms.org/netxms-release-latest.deb && \
     dpkg -i netxms-release-latest.deb && \
-    apt-get update && apt-get -y install netxms-base="${MAJOR_VERSION}.${MINOR_VERSION}-1+buster" netxms-server="${MAJOR_VERSION}.${MINOR_VERSION}-1+buster" netxms-agent="${MAJOR_VERSION}.${MINOR_VERSION}-1+buster" netxms-dbdrv-odbc="${MAJOR_VERSION}.${MINOR_VERSION}-1+buster" supervisor && apt-get clean
+    apt-get update && apt-get -y install netxms-base="${MAJOR_VERSION}.${MINOR_VERSION}-1+bullseye" netxms-server="${MAJOR_VERSION}.${MINOR_VERSION}-1+bullseye" netxms-agent="${MAJOR_VERSION}.${MINOR_VERSION}-1+bullseye" netxms-dbdrv-odbc="${MAJOR_VERSION}.${MINOR_VERSION}-1+bullseye" supervisor && apt-get clean
 
 # Microsoft ODBC Driver and Kerberos
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
